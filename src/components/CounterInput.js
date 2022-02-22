@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { incrementAction, decrementAction, resetAction } from './redux/Action';
 import '../App.css'
 
 export default function CounterInput() {
@@ -7,19 +8,19 @@ export default function CounterInput() {
   return (
     <div>
       <button
-        onClick={() => dispatch({ type: 'INCREMENT' })}
+        onClick={() => dispatch(incrementAction())}
         className='btnInc'
       >
         +
       </button>
       <button
-        onClick={() => dispatch({ type: 'DECREMENT' })}
+        onClick={() => dispatch(decrementAction())}
         className='btnDec'
       >
         -
       </button>
       <button
-        onClick={() => dispatch({ type: 'RESET' })}
+        onClick={() => dispatch(resetAction())}
         className='btnRes'
       >
         Reset
